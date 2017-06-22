@@ -1,0 +1,15 @@
+D:\课程\编程\BankSystem\BankSystem\Core\bin\Debug\Core.dll
+D:\课程\编程\BankSystem\BankSystem\Core\bin\Debug\Core.pdb
+D:\课程\编程\BankSystem\BankSystem\Core\bin\Debug\System.Web.Mvc.dll
+D:\课程\编程\BankSystem\BankSystem\Core\bin\Debug\System.Web.Mvc.xml
+D:\课程\编程\BankSystem\BankSystem\Core\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+D:\课程\编程\BankSystem\BankSystem\Core\obj\Debug\Core.dll
+D:\课程\编程\BankSystem\BankSystem\Core\obj\Debug\Core.pdb
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\bin\Debug\Core.dll
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\bin\Debug\Core.pdb
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\bin\Debug\System.Web.Mvc.dll
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\bin\Debug\System.Web.Mvc.xml
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\obj\Debug\Core.dll
+F:\MVC后台\大作业\BankSystem\BankSystem\Core\obj\Debug\Core.pdb

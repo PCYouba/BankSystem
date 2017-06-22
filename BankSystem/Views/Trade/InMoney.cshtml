@@ -1,0 +1,39 @@
+﻿@model BankSystem.Users.Models.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>存款</title>
+    <link href="~/Content/Trade/InMoney.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Container"> 
+        <div id="divtop">
+           <br/><br /><br /><br /><br /><br /><br />
+            @using (Html.BeginForm("InMoney", "Trade", FormMethod.Post))
+            {
+                <div id="top">
+                    账号： @Model.Account.ToString().PadLeft(8, '0')
+                </div>
+                    <div>
+                        金额： <input type="text" name="balance" id="balance" value="" />
+                    </div>
+                    @ViewBag.show
+                    <div id="Button">
+                        <input type="submit" value="确定" />
+                        &nbsp;&nbsp;
+                        <input type="reset" value="重置" />
+                    </div>
+                    @Html.ActionLink("返回主菜单", "Menu", "Users")
+            }
+        </div>      
+          
+               
+    </div>
+</body>
+</html>

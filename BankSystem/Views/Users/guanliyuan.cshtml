@@ -1,0 +1,53 @@
+﻿@model BankSystem.Core.Model.LoginInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理员登陆</title>
+    <link href="~/Content/Users/Admin.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+    function ChangeImg()
+    {
+        var qq = new Date();
+        document.getElementById("CheckImg").src = "/Users/CheckCode/?" + qq.getMilliseconds();
+    }
+    </script>
+</head>
+<body>
+    
+    @using (Html.BeginForm("guanliyuan", "Users", FormMethod.Post))
+    {
+        <div id="Container">
+            <br/>
+            <div id="LoginName">
+                账 号:<input type="text" name="LoginCode" id="LoginCode" value="" />
+            </div>
+            <div id="LoginPass">
+                密 码:<input type="password" name="LoginPWD" id="LoginPWD" value="" />
+            </div>
+            <div id="code">
+                请输入验证码：
+                <br />
+                <input type="text" name="CheckCode" />
+                <br />
+                <img id="CheckImg" src="/Users/CheckCode" style="width:100px;height:30px;cursor:pointer;" title="看不起?换一张" onclick="ChangeImg()" />
+            </div>
+            @ViewBag.error
+            <div id="Button">
+                <input type="submit" value="登陆" />
+                &nbsp;&nbsp;
+                <input type="reset" value="重置" />
+            </div>
+            <div id="Button">
+                @Html.ActionLink("返回用户登录界面", "Login","Users")
+            </div>
+        </div>
+    }
+</body>
+</html>

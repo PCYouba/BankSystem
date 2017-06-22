@@ -1,0 +1,30 @@
+﻿            #Container{
+        margin:100px auto;
+        border:solid 1px #f0f0f0;
+        width:784px;
+        height:382px;
+        font-size:14px;
+        background-image:url(/images/a1.png)
+        }
+          #LoginName{
+              margin-top:140px;
+              margin-left:250px;
+          
+          }
+           #LoginPass{
+              margin-top:5px;
+              margin-left:250px;
+               
+          }
+           #Button{
+               margin-top:20px;
+               margin-left:260px;
+           }
+         
+            #href{
+               margin-top:-120px;
+               margin-left:560px;
+           }
+            #code{
+                margin-left:250px;
+            }

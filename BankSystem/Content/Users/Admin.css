@@ -1,0 +1,24 @@
+﻿        #Container {
+            margin: 100px auto;
+            border: solid 1px none;
+            width: 640px;
+            height: 386px;
+            background-image: url(/images/a3.png);
+        }
+           #LoginName{
+              margin-top:100px;
+              margin-left:140px;
+          
+          }
+           #LoginPass{
+              margin-top:5px;
+              margin-left:140px;
+               
+          }
+           #Button{
+               margin-top:10px;
+               margin-left:140px;
+           }
+           #code{
+                margin-left:140px;
+            }

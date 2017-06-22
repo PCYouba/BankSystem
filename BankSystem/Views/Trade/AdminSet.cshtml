@@ -1,0 +1,148 @@
+﻿@model PetaPoco.Page<BankSystem.Users.Models.UserInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理员</title>
+    <link href="~/Content/Trade/AdminSet.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Container">
+        <div id="divbuju">
+            @using (Html.BeginForm("AdminSet", "Trade", FormMethod.Post))
+            {
+                <div>
+                    账号： <input type="text" name="account" id="account" value="" />
+                </div>
+                <div id="Button">
+                    <input type="submit" value="冻结" name="action1"/>
+                    &nbsp;&nbsp;
+                    <input type="submit" value="解除冻结"name="action2" />
+                </div>
+                <div>
+                        @ViewBag.error
+
+                    </div>
+
+                <div>
+                    <table border="" cellspacing="" cellpadding="">
+                        <tr>
+                            <th>
+                                账号
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                性别
+                            </th>
+                           
+                            <th>
+                                身份证号密码
+                            </th>
+                            <th>
+                                电话
+                            </th>
+                            <th>
+                                地址
+                            </th>
+                            <th>
+                                日期
+                            </th>
+                            <th>
+                                余额
+                            </th>
+                            <th>
+                                状态
+                            </th>
+                        </tr>
+                        @for (int i = 0; i < Model.Items.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.Items[i].Account.ToString().PadLeft(8,'0')
+                                </td>
+
+                                <td>
+                                    @Model.Items[i].Name
+                                </td>
+                                
+                                    @if (@Model.Items[i].Sex == 0)
+                                    {
+                                        <td>男</td>
+                                    }
+                                    @if (@Model.Items[i].Sex == 1)
+                                    {
+                                        <td>女</td>
+                                    }
+
+                                        
+                              
+                                <td>
+                                    @Model.Items[i].IDCard
+                                </td>
+                                <td>
+                                    @Model.Items[i].Phone
+                                </td>
+                                <td>
+                                    @Model.Items[i].Addr
+                                </td>
+                                <td>
+                                    @Model.Items[i].CreateDate
+                                </td>
+                                <td>
+                                    @Model.Items[i].Balance
+                                </td>
+                                @if (@Model.Items[i].Status == 0)
+                                {
+                                    <td>冻结</td>
+                                }
+                                @if (@Model.Items[i].Status == 1)
+                                {
+                                    <td>正常</td>
+                                }
+                                @if (@Model.Items[i].Status == 2)
+                                {
+                                    <td>注销</td>
+                                }
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <div>
+                    @ViewBag.sumMoney
+                </div>
+                <div>
+                    @Html.ActionLink("返回登陆", "Login","Users");
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="page">
+        共 @Model.TotalPages 页，当前第 @Model.CurrentPage 页,
+        @if (Model.CurrentPage > 1)
+        {
+            <span><a href="/Trade/AdminSet?page=@(Model.CurrentPage-1)">上一页</a></span>
+        }
+        else
+        {
+            <span style="color:#c0c0c0">上一页</span>
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <span><a href="/Trade/AdminSet?page=@(Model.CurrentPage+1)">下一页</a></span>
+        }
+        else
+        {
+            <span style="color:#c0c0c0">下一页</span>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿@model BankSystem.Users.Models.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>主菜单</title>
+    <link href="~/Content/Users/Menu.css" rel="stylesheet" />    
+</head>
+<body>
+    <div id="Container">
+        <div id="divleft">
+            <div>
+                账号：@Model.Account.ToString().PadLeft(8,'0')
+            </div>
+            <br />
+            <div>
+                姓名：@Model.Name
+            </div>
+            <br />
+            <div>
+                性别：@ViewBag.show
+            </div>
+            <br />
+            <div>
+                电话：@Model.Phone
+            </div>
+            <br />
+            <div>
+                地址：@Model.Addr
+            </div>
+            <br />
+            <div>
+                余额：@Model.Balance
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <br/>
+        <br />
+        <br/>
+        <div id="divright">           
+            <br />
+            @if (Model.Status !=0)
+            {
+                <div>
+                    @Html.ActionLink("存款", "InMoney","Trade")
+                </div>               
+                <div>
+                    @Html.ActionLink("取款", "OutMoney", "Trade")
+                </div>
+                <div>
+                    @Html.ActionLink("转账", "Trans", "Trade")
+                </div>
+                <div>
+                    @Html.ActionLink("注销", "Delete", "Trade")
+                </div>
+                <div>
+                    @Html.ActionLink("交易查询", "TradeSearch", "Trade")
+                    <br />
+                </div>
+                <div>
+                    @Html.ActionLink("修改信息", "Update")
+                </div>
+            }
+            @if (Model.Status == 0)
+            {
+                <div>
+                    @Html.ActionLink("存款", "InMoney", "Trade")
+                </div>
+                <div>
+                    取款
+                </div>
+                <div>
+                    转账
+                </div>
+                <div>
+                    注销
+                </div>
+                <div>
+                    @Html.ActionLink("交易查询", "TradeSearch","Trade")
+                    <br />
+                </div>
+                <div>
+                    @Html.ActionLink("修改信息", "Update")
+                </div>
+            }
+           
+            <div>
+
+                @Html.ActionLink("返回登陆界面", "Login")         
+            </div>
+          
+        </div>
+    </div>
+</body>
+</html>

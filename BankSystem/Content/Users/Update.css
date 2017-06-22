@@ -1,0 +1,12 @@
+﻿ #Container {
+            margin: 100px auto;
+            border: solid 1px #f0f0f0;
+            width: 625px;
+            height: 408px;
+            background-image: url(/images/a10.png);
+        }
+        #divmap {
+            margin-left: 200px;
+            margin-top: 100px;
+            font-size:14px;
+        }

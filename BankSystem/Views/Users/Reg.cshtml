@@ -1,0 +1,70 @@
+﻿@model BankSystem.Users.Models.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户注册</title>
+    <link href="~/Content/Users/Reg.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Container">
+        <div id="divmap">
+            @using (Html.BeginForm("Reg", "Users", FormMethod.Post))
+            {
+                <div>
+                    姓名： @Html.TextBoxFor(Model => Model.Name)
+                    <span>@Html.ValidationMessageFor(Model => Model.Name)</span>
+                </div>
+                <div>
+                    性别：
+                    @Html.RadioButtonFor(model => model.Sex, 0)男
+                    @Html.RadioButtonFor(model => model.Sex, 1)女
+                    <span>@Html.ValidationMessageFor(Model => Model.Sex)</span>
+                </div>
+                <div>
+                    登陆密码： @Html.PasswordFor(Model => Model.LoginPass, htmlAttributes: new { Value = Model.LoginPass })
+                    <span>@Html.ValidationMessageFor(Model => Model.LoginPass)</span>
+                </div>
+                <div>
+                    确认密码：<input type="password" name="LoginPWD" id="LoginPWD" value="" />
+                    <span>@ViewBag.LoginPass</span>
+                </div>
+                <div>
+                    交易密码： @Html.PasswordFor(Model => Model.TradePass, htmlAttributes: new { Value = Model.TradePass })
+                    <span>@Html.ValidationMessageFor(Model => Model.TradePass)</span>
+                </div>
+                <div>                    
+                    确认密码：<input type="password" name="qrTradePass" id="qrTradePass" value="" />
+                    <span>@ViewBag.LoginPass</span>
+                </div>
+                <div>
+                    身份证号： @Html.TextBoxFor(Model => Model.IDCard)
+                    <span>@Html.ValidationMessageFor(Model => Model.IDCard)</span>
+                </div>
+                <div>
+                    联系电话： @Html.TextBoxFor(Model => Model.Phone)
+                    <span>@Html.ValidationMessageFor(Model => Model.Phone)</span>
+                </div>
+                <div>
+                    地址： @Html.TextBoxFor(Model => Model.Addr)
+                    <span>@Html.ValidationMessageFor(Model => Model.Addr)</span>
+                </div>
+                <div>
+                    余额： @Html.TextBoxFor(Model => Model.Balance)
+                    <span>@ViewBag.show</span>
+                    
+                </div>
+                <input type="hidden" name="Account" value="@Model.Account" />
+                <input type="submit" value="确定" />
+                <input type="reset" value="重置" />
+            }
+        </div>
+       
+    </div>
+</body>
+</html>

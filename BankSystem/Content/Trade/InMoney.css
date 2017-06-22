@@ -1,0 +1,11 @@
+﻿ #Container {
+            margin: 100px auto;
+            border: solid 1px none;
+            width: 644px;
+            height: 379px;
+            background-image: url(/images/a5.png);
+        }          
+         #divtop{
+             margin-left:200px;
+             margin-top:200px;
+         } 

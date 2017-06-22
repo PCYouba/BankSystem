@@ -1,0 +1,45 @@
+﻿@model BankSystem.Users.Models.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>转账</title>
+    <link href="~/Content/Trade/Trans.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="Container">
+        <br/>
+        <div id="divbuju">
+            @using (Html.BeginForm("Trans", "Trade", FormMethod.Post))
+            {
+                <div>
+                    账号： @Model.Account.ToString().PadLeft(8, '0')
+                </div>
+                <div>
+                    转账账号：<input type="text" name="recaccount" id="recaccount" value="" />
+                </div>
+                <div>
+                    转账金额： <input type="text" name="recmoney" id="recmoney" value="" />
+                </div>
+                <div>
+                    交易密码： <input type="password" name="tradePWD" id="tradePWD" value="" />
+                </div>
+                <div id="Button">
+                    <input type="submit" value="确定" />
+                    &nbsp;&nbsp;
+                    <input type="reset" value="重置" />
+                </div>
+                <div>
+                    @ViewBag.error
+                </div>
+                @Html.ActionLink("返回主菜单", "Menu", "Users")
+            }
+        </div>
+    </div>
+</body>
+</html>
